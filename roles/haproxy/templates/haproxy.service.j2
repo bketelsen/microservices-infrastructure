@@ -17,6 +17,7 @@ ExecStart=/usr/bin/docker run \
     --rm \
     --name=haproxy \
     --net=host \
+    -v /etc/consul-template/config.d:/consul-template/config.d \
     --env-file={{ haproxy_env }}  \
     {{ haproxy_image }}:{{ haproxy_image_tag }} 
 
